@@ -1,6 +1,7 @@
+
 var stats = new Stats();
 		stats.setMode( 1 );
-		document.getElementById("stats-div").appendChild(stats.domElement);
+//		document.getElementById("stats-div").appendChild(stats.domElement);
 
 var time,p,refractSphereCamera;
     
@@ -24,7 +25,10 @@ container.appendChild( renderer.domElement );
     path + 'LEFT' + format, path + 'RIGHT' + format,
     path + 'UP' + format, path + 'DOWN' + format,
     path + 'BACK' + format, path + 'FRONT' + format];
-    var textureCube = THREE.ImageUtils.loadTextureCube(urls);    
+    var textureCube = THREE.ImageUtils.loadTextureCube(urls,{},function(){
+    console.log("three.js textures loaded");
+    $('#loader').fadeOut(1000);
+    });    
 
 //BLOB
 //var geometry = new THREE.SphereGeometry(3, 100, 100, 0, Math.PI * 2, 0, Math.PI * 2);
