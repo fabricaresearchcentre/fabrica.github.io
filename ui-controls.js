@@ -2,6 +2,7 @@
 var loader = $('#loader');
 
 $('#canvas-ui').css('opacity',0);
+//$('arrow_down').hide();
 $('body').prepend(loader);
 
 $('#canvas-ui').fadeTo(0,0);
